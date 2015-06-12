@@ -14,24 +14,59 @@ function router()
                 '#markup' => theme('welcome', array()),
             );
             break;
-        case 'listings':
+        case 'listing-list':
             $page = array(
-                '#markup' => theme('listings', array()),
+                '#markup' => theme('listing-list', array()),
             );
             break;
-        case 'listing':
+        case 'listing-view':
             $page = array(
-                '#markup' => theme('listing', array()),
+                '#markup' => theme('listing-view', array()),
             );
             break;
-        case 'search':
+        case 'basic-listing-view-item':
             $page = array(
-                '#markup' => theme('search', array()),
+                '#markup' => theme('basic-listing-view-item', array()),
             );
             break;
-        case 'categories':
+        case 'contact-listing-view-item':
             $page = array(
-                '#markup' => theme('categories', array()),
+                '#markup' => theme('contact-listing-view-item', array()),
+            );
+            break;
+        case 'location-listing-view-item':
+            $page = array(
+                '#markup' => theme('location-listing-view-item', array()),
+            );
+            break;
+        case 'description-listing-view-item':
+            $page = array(
+                '#markup' => theme('description-listing-view-item', array()),
+            );
+            break;
+        case 'productsandservices-listing-view-item':
+            $page = array(
+                '#markup' => theme('productsandservices-listing-view-item', array()),
+            );
+            break;
+        case 'basic-listing-node-form':
+            $page = array(
+                '#markup' => theme('basic-listing-node-form', array()),
+            );
+            break;
+        case 'contact-listing-node-form':
+            $page = array(
+                '#markup' => theme('contact-listing-node-form', array()),
+            );
+            break;
+        case 'description-listing-node-form':
+            $page = array(
+                '#markup' => theme('description-listing-node-form', array()),
+            );
+            break;
+        case 'location-listing-node-form':
+            $page = array(
+                '#markup' => theme('location-listing-node-form', array()),
             );
             break;
         default:

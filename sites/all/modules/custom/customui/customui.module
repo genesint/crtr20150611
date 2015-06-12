@@ -29,10 +29,25 @@ function customui_theme()
             'template' => 'contact-us',
             'variables' => array('title' => '', 'contents' => array())
         ),
-        'listing_node_form' => array(
-            'render element' => 'form',
-            'template' => 'listing-node-form',
-            'path' => 'sites/all/modules/custom/customui/views/forms'
+        'basic-listing-node-form' => array(
+            'template' => 'basic-listing-node-form',
+            'variables' => array('title' => '', 'contents' => array()),
+            'path' => 'sites/all/modules/custom/customui/views/forms/listing'
+        ),
+        'contact-listing-node-form' => array(
+            'template' => 'contact-listing-node-form',
+            'variables' => array('title' => '', 'contents' => array()),
+            'path' => 'sites/all/modules/custom/customui/views/forms/listing'
+        ),
+        'description-listing-node-form' => array(
+            'template' => 'description-listing-node-form',
+            'variables' => array('title' => '', 'contents' => array()),
+            'path' => 'sites/all/modules/custom/customui/views/forms/listing'
+        ),
+        'location-listing-node-form' => array(
+            'template' => 'location-listing-node-form',
+            'variables' => array('title' => '', 'contents' => array()),
+            'path' => 'sites/all/modules/custom/customui/views/forms/listing'
         ),
         'category_node_form' => array(
             'render element' => 'form',
@@ -44,15 +59,40 @@ function customui_theme()
             'template' => 'organisation-type-node-form',
             'path' => 'sites/all/modules/custom/customui/views/forms'
         ),
-        'listings' => array(
-            'template' => 'listings',
-            'variables' => array('title' => '', 'contents' => array()),
-            'path' => 'sites/all/modules/custom/customui/views/lists'
-        ),
-        'listing' => array(
-            'template' => 'listing',
+        'listing-list' => array(
+            'template' => 'listing-list',
             'variables' => array('title' => '', 'contents' => array()),
             'path' => 'sites/all/modules/custom/customui/views'
+        ),
+        'listing-view' => array(
+            'template' => 'listing-view',
+            'variables' => array('title' => '', 'contents' => array()),
+            'path' => 'sites/all/modules/custom/customui/views'
+        ),
+        'basic-listing-view-item' => array(
+            'template' => 'basic-listing-view-item',
+            'variables' => array('title' => '', 'contents' => array()),
+            'path' => 'sites/all/modules/custom/customui/views/listing'
+        ),
+        'contact-listing-view-item' => array(
+            'template' => 'contact-listing-view-item',
+            'variables' => array('title' => '', 'contents' => array()),
+            'path' => 'sites/all/modules/custom/customui/views/listing'
+        ),
+        'description-listing-view-item' => array(
+            'template' => 'description-listing-view-item',
+            'variables' => array('title' => '', 'contents' => array()),
+            'path' => 'sites/all/modules/custom/customui/views/listing'
+        ),
+        'location-listing-view-item' => array(
+            'template' => 'location-listing-view-item',
+            'variables' => array('title' => '', 'contents' => array()),
+            'path' => 'sites/all/modules/custom/customui/views/listing'
+        ),
+        'productsandservices-listing-view-item' => array(
+            'template' => 'productsandservices-listing-view-item',
+            'variables' => array('title' => '', 'contents' => array()),
+            'path' => 'sites/all/modules/custom/customui/views/listing'
         ),
         'welcome' => array(
             'template' => 'welcome',
@@ -64,11 +104,66 @@ function customui_theme()
 
 function customui_listing_node_form_submit(&$form, &$form_state)
 {
-    $form_state['redirect'] = "listings";
+    $request_path = request_path();
+    $nid = empty($_GET['nid']) ? "" : $_GET['nid'];
+    switch ($request_path) {
+        case "basic-listing-node-form":
+            if ($nid != "") {
+                $form_state['redirect'] = array("basic-listing-view-item", array(
+                    'query'=>array(
+                    "nid" => $nid,
+                        'iframe'=>'1',
+                    ),
+                ));
+            } else {
+                $form_state['redirect'] = "listing-list";
+            }
+            break;
+        case "description-listing-node-form":
+            if ($nid != "") {
+                $form_state['redirect'] = array("description-listing-view-item", array(
+                    'query'=>array(
+                        "nid" => $nid,
+                        'iframe'=>'1',
+                    ),
+                ));
+            } else {
+                $form_state['redirect'] = "listing-list";
+            }
+            break;
+        case "contact-listing-node-form":
+            if ($nid != "") {
+                $form_state['redirect'] = array("contact-listing-view-item", array(
+                    'query'=>array(
+                        "nid" => $nid,
+                        'iframe'=>'1',
+                    ),
+                ));
+            } else {
+                $form_state['redirect'] = "listing-list";
+            }
+            break;
+        case "location-listing-node-form":
+            if ($nid != "") {
+                $form_state['redirect'] = array("location-listing-view-item", array(
+                    'query'=>array(
+                        "nid" => $nid,
+                        'iframe'=>'1',
+                    ),
+                ));
+            } else {
+                $form_state['redirect'] = "listing-list";
+            }
+            break;
+        default:
+            $form_state['redirect'] = "listing-list";
+    }
 }
-function customui_form_alter(&$form, &$form_state, $form_id){
 
-    switch($form_id){
+function customui_form_alter(&$form, &$form_state, $form_id)
+{
+
+    switch ($form_id) {
         case "listing_node_form":
             $form['actions']['submit']['#submit'][] = 'customui_listing_node_form_submit';
             break;

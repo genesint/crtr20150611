@@ -1,6 +1,15 @@
 title|title callback|title arguments|description|page callback|page arguments|access callback|access arguments|file|file path|weight|menu_name|type|url
 Welcome||||router||||router.inc||||MENU_NORMAL_ITEM|welcome
-Listings list||||router||||router.inc||||MENU_NORMAL_ITEM|listings
-Listing||||router||||router.inc||||MENU_NORMAL_ITEM|listing
+Listings list||||router||||router.inc||||MENU_NORMAL_ITEM|listing-list
+Listing view||||router||||router.inc||||MENU_NORMAL_ITEM|listing-view
+Basic information||||router||||router.inc||||MENU_NORMAL_ITEM|basic-listing-view-item
+Contact information||||router||||router.inc||||MENU_NORMAL_ITEM|contact-listing-view-item
+Description||||router||||router.inc||||MENU_NORMAL_ITEM|description-listing-view-item
+Location on map||||router||||router.inc||||MENU_NORMAL_ITEM|location-listing-view-item
+Products and services||||router||||router.inc||||MENU_NORMAL_ITEM|productsandservices-listing-view-item
+Basic listing information||||router||||router.inc||||MENU_NORMAL_ITEM|basic-listing-node-form
+Contact listing information view||||router||||router.inc||||MENU_NORMAL_ITEM|contact-listing-node-form
+Description listing information||||router||||router.inc||||MENU_NORMAL_ITEM|description-listing-node-form
+Location listing information||||router||||router.inc||||MENU_NORMAL_ITEM|location-listing-node-form
 Contact Us||||router||||router.inc||||MENU_NORMAL_ITEM|contact-us
 Search||||router||||router.inc||||MENU_NORMAL_ITEM|search
