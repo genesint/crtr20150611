@@ -91,7 +91,7 @@ $iframe = empty($_GET['iframe']) ? "0" : $_GET['iframe'];
                     <a class="name navbar-brand" href="<?php print $front_page; ?>"
                        title="<?php print t('Home'); ?>"><?php print $site_name; ?></a>
                 <?php endif; ?>
-                <form class="navbar-form navbar-left" role="search" action="listings">
+                <form class="navbar-form navbar-left" role="search" action="search-listing-list">
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Enter keyword or location" name="tskey">
                     </div>

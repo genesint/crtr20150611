@@ -13,3 +13,6 @@ Description listing information||||router||||router.inc||||MENU_NORMAL_ITEM|desc
 Location listing information||||router||||router.inc||||MENU_NORMAL_ITEM|location-listing-node-form
 Contact Us||||router||||router.inc||||MENU_NORMAL_ITEM|contact-us
 Search||||router||||router.inc||||MENU_NORMAL_ITEM|search
+Register||||router||||router.inc||||MENU_NORMAL_ITEM|register
+Owner listing list||||router||||router.inc||||MENU_NORMAL_ITEM|owner-listing-list
+Search listing list||||router||||router.inc||||MENU_NORMAL_ITEM|search-listing-list

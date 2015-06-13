@@ -69,6 +69,21 @@ function router()
                 '#markup' => theme('location-listing-node-form', array()),
             );
             break;
+	  case 'owner-listing-list':
+		$page = array(
+		  '#markup' => theme('owner-listing-list', array()),
+		);
+		break;
+	  case 'search-listing-list':
+		$page = array(
+		  '#markup' => theme('search-listing-list', array()),
+		);
+		break;
+	  case 'register':
+		$page = array(
+		  '#markup' => theme('register', array()),
+		);
+		break;
         default:
             $page = array(
                 '#markup' => "<div>Hello, world</div>",
