@@ -3,22 +3,30 @@ module_load_include('inc', 'customui', 'common');
 $categories = getCategories();
 $limit = 36;
 ?>
-<div class="row">
-  <div class="col-md-1">
-  </div>
-  <div class="col-md-9">
-	<div class="jumbotron">
-	  <h1>Uganda Directory</h1>
+<?php
+if (!user_is_logged_in()) {
+  ?>
+  <div class="row">
+	<div class="col-md-1">
+	</div>
+	<div class="col-md-9">
+	  <div class="jumbotron">
+		<h1>Uganda Directory</h1>
 
-	  <p></p>
+		<p></p>
 
-	  <p><a href="#" class="btn btn-primary btn-lg" role="button">Sign up for
-		  free!</a></p>
+		<p><a href="register" class="btn btn-primary btn-lg" role="button">Sign
+			up for
+			free!</a></p>
+	  </div>
+	</div>
+	<div class="col-md-2">
 	</div>
   </div>
-  <div class="col-md-2">
-  </div>
-</div>
+
+<?php
+}
+?>
 <div class="row">
   <div class="col-md-1">
   </div>
